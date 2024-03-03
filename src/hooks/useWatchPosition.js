@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 //     timeout: 27000,
 // };
 
-const useWatchPosition = (options) => {
+const useWatchPosition = (options = null) => {
     const [position, setPosition] = useState({
         latitude : undefined,
         longitude : undefined,
@@ -29,7 +29,7 @@ const useWatchPosition = (options) => {
         );
 
         return () => navigator.geolocation.clearWatch(watchID);
-    }, []);
+    }, [options]);
 
     return position;
 }

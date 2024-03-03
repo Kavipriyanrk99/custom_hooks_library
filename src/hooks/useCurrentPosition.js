@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 //     timeout: 27000,
 // };
 
-const useCurrentPosition = (options) => {
+const useCurrentPosition = (options = null) => {
     const [position, setPosition] = useState({
         latitude : undefined,
         longitude : undefined,
@@ -27,7 +27,7 @@ const useCurrentPosition = (options) => {
             },
             options
         )
-    }, []);
+    }, [options]);
 
     return position;
 }
